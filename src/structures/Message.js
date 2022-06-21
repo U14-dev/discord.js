@@ -577,7 +577,7 @@ class Message extends Base {
     if (typeof options !== 'object') return Promise.reject(new TypeError('INVALID_TYPE', 'options', 'object', true));
     const { timeout = 0, reason } = options;
     if (timeout <= 0) {
-      return this.channel.messages.delete(this.id, reason).then(() => this);
+      return this.channel?.messages.delete(this.id, reason).then(() => this);
     } else {
       return new Promise(resolve => {
         this.client.setTimeout(() => {
@@ -612,7 +612,7 @@ class Message extends Base {
    * @returns {Promise<Message>}
    */
   fetch(force = false) {
-    return this.channel.messages.fetch(this.id, true, force);
+    return this.channel?.messages.fetch(this.id, true, force);
   }
 
   /**

@@ -114,7 +114,7 @@ class GuildMember extends Base {
    */
   get lastMessage() {
     const channel = this.guild.channels.cache.get(this.lastMessageChannelID);
-    return (channel && channel.messages.cache.get(this.lastMessageID)) || null;
+    return (channel && channel?.messages.cache.get(this.lastMessageID)) || null;
   }
 
   /**

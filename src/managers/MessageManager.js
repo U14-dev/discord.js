@@ -50,17 +50,17 @@ class MessageManager extends BaseManager {
    * @returns {Promise<Message>|Promise<Collection<Snowflake, Message>>}
    * @example
    * // Get message
-   * channel.messages.fetch('99539446449315840')
+   * channel?.messages.fetch('99539446449315840')
    *   .then(message => console.log(message.content))
    *   .catch(console.error);
    * @example
    * // Get messages
-   * channel.messages.fetch({ limit: 10 })
+   * channel?.messages.fetch({ limit: 10 })
    *   .then(messages => console.log(`Received ${messages.size} messages`))
    *   .catch(console.error);
    * @example
    * // Get messages and filter by user ID
-   * channel.messages.fetch()
+   * channel?.messages.fetch()
    *   .then(messages => console.log(`${messages.filter(m => m.author.id === '84484653687267328').size} messages`))
    *   .catch(console.error);
    */
@@ -76,7 +76,7 @@ class MessageManager extends BaseManager {
    * @returns {Promise<Collection<Snowflake, Message>>}
    * @example
    * // Get pinned messages
-   * channel.messages.fetchPinned()
+   * channel?.messages.fetchPinned()
    *   .then(messages => console.log(`Received ${messages.size} messages`))
    *   .catch(console.error);
    */

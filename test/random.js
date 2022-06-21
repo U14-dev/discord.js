@@ -229,7 +229,7 @@ client.on('messageReactionRemove', (reaction, user) => {
 client.on('message', m => {
   if (m.content.startsWith('#reactions')) {
     const mID = m.content.split(' ')[1];
-    m.channel.messages.fetch(mID).then(rM => {
+    m.channel?.messages.fetch(mID).then(rM => {
       for (const reaction of rM.reactions.cache.values()) {
         reaction.users.fetch().then(users => {
           m.channel.send(

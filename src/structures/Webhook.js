@@ -161,7 +161,7 @@ class Webhook {
       .then(d => {
         const channel = this.client.channels ? this.client.channels.cache.get(d.channel_id) : undefined;
         if (!channel) return d;
-        return channel.messages.add(d, false);
+        return channel?.messages.add(d, false);
       });
   }
 

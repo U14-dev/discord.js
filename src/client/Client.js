@@ -332,10 +332,10 @@ class Client extends BaseClient {
     let messages = 0;
 
     for (const channel of this.channels.cache.values()) {
-      if (!channel.messages) continue;
+      if (!channel?.messages) continue;
       channels++;
 
-      messages += channel.messages.cache.sweep(
+      messages += channel?.messages.cache.sweep(
         message => now - (message.editedTimestamp || message.createdTimestamp) > lifetimeMs,
       );
     }

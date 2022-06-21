@@ -58,7 +58,7 @@ class GenericAction {
           channel_id: channel.id,
           guild_id: data.guild_id || (channel.guild ? channel.guild.id : null),
         },
-        channel.messages,
+        channel?.messages,
         id,
         PartialTypes.MESSAGE,
         cache,
