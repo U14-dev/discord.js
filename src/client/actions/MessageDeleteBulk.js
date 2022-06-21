@@ -24,7 +24,7 @@ class MessageDeleteBulkAction extends Action {
         if (message) {
           message.deleted = true;
           messages.set(message.id, message);
-          channel?.messages.cache.delete(id);
+          channel?.messages?.cache.delete(id);
         }
       }
 
